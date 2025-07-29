@@ -1,0 +1,23 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "<script>alert('XSS Swagger!')</script>",
+    "version": "1.0.0",
+    "title": "Swagger XSS"
+  },
+  "host": "example.com",
+  "basePath": "/",
+  "schemes": ["https"],
+  "paths": {
+    "/test": {
+      "get": {
+        "summary": "Test endpoint",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    }
+  }
+}
