@@ -1,18 +1,32 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "exemple yaml.spec",
-    "description": "<math><mtex><option><FAKEFAKE><option></option><mglyph><svg><metext>textarea><a  title=\"</textarea><img src+'#' onerror='alert(document.domain)'>"
+    "title": "XSS Test API",
+    "description": "<img src=x onerror=alert('XSS in description')>",
+    "version": "1.0.0"
   },
   "paths": {
-    "/accounts": {
+    "/test": {
       "get": {
-        "tags": ["accounts"],
-        "operationId": "findAccounts",
-        "summary": "Finds all accounts",
+        "summary": "Test GET endpoint",
+        "description": "<svg/onload=alert('XSS in path description')>",
+        "parameters": [
+          {
+            "name": "param1",
+            "in": "query",
+            "type": "string",
+            "default": "<img src=x onerror=alert('XSS in param default')>"
+          },
+          {
+            "name": "param2",
+            "in": "query",
+            "type": "string",
+            "example": "<script>alert('XSS in param example')</script>"
+          }
+        ],
         "responses": {
           "200": {
-            "description": "no response was specified"
+            "description": "<iframe src='javascript:alert(\"XSS in response description\")'></iframe>"
           }
         }
       }
