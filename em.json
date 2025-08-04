@@ -1,32 +1,17 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "XSS Test API",
-    "description": "<img src=x onerror=alert('XSS in description')>",
-    "version": "1.0.0"
+    "title": "XSS Test",
+    "version": "1.0"
   },
   "paths": {
-    "/test": {
+    "/xss": {
       "get": {
-        "summary": "Test GET endpoint",
-        "description": "<svg/onload=alert('XSS in path description')>",
-        "parameters": [
-          {
-            "name": "param1",
-            "in": "query",
-            "type": "string",
-            "default": "<img src=x onerror=alert('XSS in param default')>"
-          },
-          {
-            "name": "param2",
-            "in": "query",
-            "type": "string",
-            "example": "<script>alert('XSS in param example')</script>"
-          }
-        ],
+        "summary": "XSS Test",
+        "description": "<script>alert(document.cookie)</script>",
         "responses": {
           "200": {
-            "description": "<iframe src='javascript:alert(\"XSS in response description\")'></iframe>"
+            "description": "Success"
           }
         }
       }
