@@ -1,0 +1,7 @@
+name: imds-test-own-testbed
+on: push
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "===IMDS==="; curl -m 5 -s http://169.254.169.254/latest/meta-data/iam/security-credentials/ || echo "IMDS-BLOCKED"; echo "===WHO==="; id; echo "===ENV-KEYS==="; env | cut -d= -f1 | sort
